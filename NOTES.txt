@@ -17,5 +17,12 @@ django-htmx
 8. Check the templates directory to understand the flow of templates
 9. Now create a static folder in the BASE_DIR and add the static folder's path in settings.py file.
 "STATICFILES_DIRS = [BASE_DIR / "static"]"
-
-
+10. Create a new app for users named a_users and add it to INSTALLED_APPS in settings.py file.
+11. Create a Profile model in models.py and register it in admin.py.
+12. Now to create a Profile object everytime a new user is created, we need SIGNALS. Create a signals.py file in a_users directory.
+13. For the signals to work, we have to register it in apps.py file.
+14. Now add "'allauth','allauth.account'" in INSTALLED_APPS in settings.py file and add "'allauth.account.middleware.AccountMiddleware'' in MIDDLEWARE in settings.py file."
+15. Run "python manage.py makemigrations" and "python manage.py migrate".
+16. Create a superuser using "python manage.py createsuperuser".
+17. Create urls and views for rendering user profile details and pass them through context to header.html template.
+18. Create forms.py for specific views.
