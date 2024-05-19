@@ -1,1 +1,21 @@
 1. Refer IMAGES directory to understand the flow and steps for this project.
+2. First we will create a Django starter with Allauth and Htmx for this project.
+3. Paste these in requirements.txt file
+"
+Django
+pillow
+django-cleanup
+django-allauth
+django-htmx
+"
+4. pillow is used to upload images. django-cleanup is used to delete duplicate images. django-allauth is used for authentication. django-htmx is used for htmx. 
+5. Create a home_view function in views.py file. Link that view to "" path in urls.py file. Add app's urls in projects urls.py. Add a home.html template in templates folder.
+6. Since we will have lots of templates for different functionality, create the templates directory in the BASE_DIR rather than inside the a_home app directory.
+7. Add a home.html template in templates folder.
+
+#! IMP => base.html -> layout.html -> page.html
+8. Check the templates directory to understand the flow of templates
+9. Now create a static folder in the BASE_DIR and add the static folder's path in settings.py file.
+"STATICFILES_DIRS = [BASE_DIR / "static"]"
+
+
