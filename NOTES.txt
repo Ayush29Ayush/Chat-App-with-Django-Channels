@@ -35,3 +35,9 @@ django-htmx
 24. Add a media folder in the BASE_DIR and add the media folder's path in settings.py file. Add a avatar folder in the media folder.
 
 #! FOR HTMX -> "https://www.youtube.com/watch?v=r-GSGH2RxJs" and "https://www.youtube.com/watch?v=TT7SV-bAZyA"
+
+
+#! Basic setup for chat-app
+1. create a new app named "a_rtchat" using "python manage.py startapp a_rtchat"
+2. Add it to INSTALLED_APPS in settings.py file
+3. Create view url and template for it.
