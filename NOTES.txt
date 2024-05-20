@@ -32,5 +32,6 @@ django-htmx
 21. We will write a custom template for django-allauth's login and logout page. Just write a base.html which should follow our template format, rest of the content is handled by django-allauth.
 22. Django-allauth has its own messages templates which are shown in the pop-ups, to remove them just create templates with empty content. Check account templates.
 23. Add settings for django-htmx in settings.py file.
+24. Add a media folder in the BASE_DIR and add the media folder's path in settings.py file. Add a avatar folder in the media folder.
 
 #! FOR HTMX -> "https://www.youtube.com/watch?v=r-GSGH2RxJs" and "https://www.youtube.com/watch?v=TT7SV-bAZyA"
