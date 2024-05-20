@@ -26,3 +26,9 @@ django-htmx
 16. Create a superuser using "python manage.py createsuperuser".
 17. Create urls and views for rendering user profile details and pass them through context to header.html template.
 18. Create forms.py for specific views.
+19. Add "'django_cleanup.apps.CleanupConfig'" in INSTALLED_APPS in settings.py file to remove duplicate images.
+20. Now for django-allauth, add the required lines in settings.py file.
+"https://docs.allauth.org/en/latest/installation/quickstart.html"
+21. We will write a custom template for django-allauth's login and logout page. Just write a base.html which should follow our template format, rest of the content is handled by django-allauth.
+22. Django-allauth has its own messages templates which are shown in the pop-ups, to remove them just create templates with empty content. Check account templates.
+23. Add settings for django-htmx in settings.py file.
