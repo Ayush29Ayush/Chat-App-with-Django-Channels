@@ -48,3 +48,22 @@ django-htmx
 8. Create a forms.py which will act as the form for the chat messages in the text input field. "ChatmessageCreateForm" is the name of the form.
 9. Add that form to the views.py with logic and pass it to the template through context.
 10. Everytime we type and press enter, the page is refreshed and new message is added, but we want to save and see that message without refreshing the page. So we will use htmx.
+11. Replace 
+"
+<form id="chat_message_form" method='POST' class="w-full">
+    {% csrf_token %}
+    {{ form }}
+</form>
+"
+with 
+```
+<form id="chat_message_form" class="w-full" hx-post="{% url 'home' %}" hx-target="#chat_messages" hx-swap="beforeend" _="on htmx:afterRequest reset() me">
+    {% csrf_token %}
+    {{ form }}
+</form>
+```
+12. hx-post means post the form data to the url. hx-target means where to render the data. hx-swap means what to do with the rendered data. hx-swap="beforeend" means before the end of the element.
+13. Add hyperscript cdn to base.html
+14. Hyperscript is a scripting language for doing front end web development. It is designed to make it very easy to respond to events and do simple DOM manipulation in code that is directly embedded on elements on a web page.
+15. _="on htmx:afterRequest reset() me" means that after the request is done, reset the form. This is done using hyperscript.
+16. chat.html is the main template. chat_message.html is the chunk of the template which has the logic whether to show the message on the left or the right based on whether the  user is the author of the message. chat_message_p.html is a partial template which gets rendered using the context provided by the htmx logic in the view and added to the main template message area at the end because of htmx-swap="beforeend".
