@@ -41,3 +41,10 @@ django-htmx
 1. create a new app named "a_rtchat" using "python manage.py startapp a_rtchat"
 2. Add it to INSTALLED_APPS in settings.py file
 3. Create view url and template for it.
+4. Create models and register them to admin.py
+5. Go to admin and create some dummy data.
+6. Go to views and get those data and render them in template. Check the use of related_name.
+7. We used ""{% for message in chat_messages reversed %} to reverse the order of messages.
+8. Create a forms.py which will act as the form for the chat messages in the text input field. "ChatmessageCreateForm" is the name of the form.
+9. Add that form to the views.py with logic and pass it to the template through context.
+10. Everytime we type and press enter, the page is refreshed and new message is added, but we want to save and see that message without refreshing the page. So we will use htmx.
